@@ -2,8 +2,12 @@
 
 import mongoose from "mongoose";
 
+//use of mongoose as a high level driver for mongodb
+//provide schema-based structure and a layer of validation
 const connectString = `mongodb://localhost:27017/DJBlog`;
-import countConnect from "../helpers/check.connect.js";
+import { countConnect } from "../helpers/check.connect.js";
+//singleton pattern
+//guarantee one connection only to the db => avoid race conditions
 
 class Database {
   constructor() {
